@@ -6,7 +6,7 @@
     <artifactId>diff-coverage-maven-plugin</artifactId>
     <name>${project.groupId}:${project.artifactId}</name>
     <packaging>maven-plugin</packaging>
-    <version>0.2.2</version>
+    <version>0.2.3-BME</version>
     <description>
         Diff coverage maven plugin builds code coverage report of new and modified code based on a provided diff
     </description>
@@ -226,45 +226,45 @@
                     <preBuildHookScript>setup</preBuildHookScript>
                     <addTestClassPath>true</addTestClassPath>
                     <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
-                    <goals>
-                        <goal>clean</goal>
-                        <goal>install</goal>
-                    </goals>
+<!--                    <goals>-->
+<!--                        <goal>clean</goal>-->
+<!--                        <goal>install</goal>-->
+<!--                    </goals>-->
                     <settingsFile>src/it/settings.xml</settingsFile>
                 </configuration>
                 <executions>
                     <execution>
-                        <goals>
-                            <goal>install</goal>
-                            <goal>run</goal>
-                        </goals>
+<!--                        <goals>-->
+<!--                            <goal>install</goal>-->
+<!--                            <goal>run</goal>-->
+<!--                        </goals>-->
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>com.github.surpsg</groupId>
-                <artifactId>diff-coverage-maven-plugin</artifactId>
-                <version>0.2.0</version>
-                <configuration>
-                    <dataFile>${project.build.directory}/fullCoverage.exec</dataFile>
-                    <diffSource>
-                        <git>${diff.source}</git>
-                    </diffSource>
-                    <violations>
-                        <failOnViolation>true</failOnViolation>
-                        <minLines>0.9</minLines>
-                        <minBranches>0.9</minBranches>
-                        <minInstructions>0.9</minInstructions>
-                    </violations>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>diffCoverage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.github.surpsg</groupId>-->
+<!--                <artifactId>diff-coverage-maven-plugin</artifactId>-->
+<!--                <version>0.2.0</version>-->
+<!--                <configuration>-->
+<!--                    <dataFile>${project.build.directory}/fullCoverage.exec</dataFile>-->
+<!--                    <diffSource>-->
+<!--                        <git>${diff.source}</git>-->
+<!--                    </diffSource>-->
+<!--                    <violations>-->
+<!--                        <failOnViolation>false</failOnViolation>-->
+<!--                        <minLines>0.9</minLines>-->
+<!--                        <minBranches>0.9</minBranches>-->
+<!--                        <minInstructions>0.9</minInstructions>-->
+<!--                    </violations>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>diffCoverage</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
